@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Slide_Bar from '../slide_bar/slide_bar';
 import Response_Bar from '../reponse_bar/response';
+
+
+
+export const Array1 = [ ];
 
 function Hello() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -8,6 +12,9 @@ function Hello() {
   const toggle = () => {
     setIsDarkMode((prev) => !prev);
   };
+  Array1.push(isDarkMode)
+    
+  // Mode.push(isDarkMode)
 
   const styles = {
     appContainer: {
@@ -35,13 +42,14 @@ function Hello() {
 
   return (
     <div style={styles.appContainer}>
-      <button style={styles.toggleChat} onClick={toggle}>
+      {/* <button style={styles.toggleChat} onClick={toggle}>
         {isDarkMode ? '🌙' : '☀️'}
-      </button>
+      </button> */}
       <Slide_Bar color={isDarkMode} />
       <Response_Bar />
     </div>
   );
 }
+
 
 export default Hello;

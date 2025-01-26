@@ -3,12 +3,15 @@ import { assets } from '../../assets/assets';
 import ImageComponent from '../ImageComponent/image';
 import "./response.css";
 
+import { Array1 } from '../main/Hello';
+
 import TypingEffect from './typingeffect';
 import { recent_context } from '../context/cont';
 import FormModal from './modal';
 import { Link } from 'react-router-dom';
 import { Username } from '../interface/Login';
 import { photo } from '../interface/setting';
+
 
 export const Array = [];
 
@@ -134,7 +137,9 @@ function Response_Bar() {
                         </p>
                         <p>How can I help you?</p>
                     </div>
-                    <div className="cards">
+                    <div className="cards" 
+                   
+                    >
                        
                         <div
                             className="card"
