@@ -12,9 +12,7 @@ import { Link } from 'react-router-dom';
 import { Username } from '../interface/Login';
 import { photo } from '../interface/setting';
 
-
 export const Array = [];
-
 
 function Response_Bar() {
     const [Display, setDisplay] = useState(false);
@@ -91,8 +89,7 @@ function Response_Bar() {
                         </a>
                     </div>
                     <div className="toggle_bar">
-                        <button   
-                        >
+                        <button>
                             <Link to="/auth">Return to Home</Link>
                         </button>
                     </div>
@@ -105,11 +102,11 @@ function Response_Bar() {
                         </a>
                     </div>
                     <div className="nav-user-icon">
-                    <ImageComponent
-      src={photo && photo.length > 0 ? photo[0] : assets.user_icon} 
-      style={{ width: 40, borderRadius: "50%" }}
-      onClick={() => setUserModalBody((prev) => !prev)} 
-    />
+                        <ImageComponent
+                            src={photo && photo.length > 0 ? photo[0] : assets.user_icon} 
+                            style={{ width: 40, borderRadius: "50%" }}
+                            onClick={() => setUserModalBody((prev) => !prev)} 
+                        />
                     </div>
                     {userModalBody && <FormModal className="pos" name={Username} />}
                 </div>
@@ -137,10 +134,7 @@ function Response_Bar() {
                         </p>
                         <p>How can I help you?</p>
                     </div>
-                    <div className="cards" 
-                   
-                    >
-                       
+                    <div className="cards">
                         <div
                             className="card"
                             onClick={() =>
@@ -193,7 +187,7 @@ function Response_Bar() {
                 </div>
                 <div className="additonal-icons">
                     <div className="mic-icon">
-                        <ImageComponent  src={assets.mic_icon} style={{ width: 30 }} />
+                        <ImageComponent src={assets.mic_icon} style={{ width: 30 }} />
                     </div>
                     <div>
                         <input
@@ -219,6 +213,7 @@ function Response_Bar() {
                             src={assets.send_icon}
                             style={{ width: 30 }}
                             onClick={() => {
+                                if (prompt.trim() === "") return; // Prevent click if input is empty
                                 if (!Display) setDisplay(true);
                                 setSendRequest(prompt);
                                 setLoading(true);
